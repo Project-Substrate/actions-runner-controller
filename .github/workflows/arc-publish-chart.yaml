@@ -35,7 +35,7 @@ concurrency:
 jobs:
   lint-chart:
     name: Lint Chart
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     outputs:
       publish-chart: ${{ steps.publish-chart-step.outputs.publish }}
     steps:
@@ -124,7 +124,7 @@ jobs:
     if: needs.lint-chart.outputs.publish-chart == 'true'
     needs: lint-chart
     name: Publish Chart
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       contents: write # for helm/chart-releaser-action to push chart release and create a release
     env:

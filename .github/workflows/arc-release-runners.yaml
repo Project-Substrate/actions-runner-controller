@@ -28,7 +28,7 @@ concurrency:
 jobs:
   build-runners:
     name: Trigger Build and Push of Runner Images
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     steps:
       - uses: actions/checkout@v6
       - name: Get runner version

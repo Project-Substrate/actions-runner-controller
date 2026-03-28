@@ -9,7 +9,7 @@ permissions:
 jobs:
   stale:
     name: Run Stale
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     permissions:
       issues: write         # for actions/stale to close stale issues
       pull-requests: write  # for actions/stale to close stale PRs

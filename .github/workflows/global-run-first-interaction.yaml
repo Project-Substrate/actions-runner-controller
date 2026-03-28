@@ -14,7 +14,7 @@ on:
 
 jobs:
   check_for_first_interaction:
-    runs-on: ubuntu-latest
+    runs-on: magnon-enterprise-runners
     steps:
       - uses: actions/checkout@v6
       - uses: actions/first-interaction@v3
