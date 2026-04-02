@@ -12,7 +12,7 @@ namespace: actions-runner-system
 #commonLabels:
 #  someName: someValue
 
-bases:
+resources:
 - ../crd
 - ../rbac
 - ../manager
