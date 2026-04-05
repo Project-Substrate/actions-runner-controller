@@ -1,3 +1,4 @@
+# Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
 # Build the manager binary
 FROM --platform=$BUILDPLATFORM golang:1.25.1 AS builder
 
@@ -55,5 +56,7 @@ COPY --from=builder /out/ghalistener .
 COPY --from=builder /out/sleep .
 
 USER 65532:65532
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost:${PORT:-8080}/health/live || exit 1
 
 ENTRYPOINT ["/manager"]
