@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Publish ARC Helm Charts
 
 # Revert to https://github.com/actions-runner-controller/releases#releases
@@ -36,6 +37,7 @@ jobs:
   lint-chart:
     name: Lint Chart
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     outputs:
       publish-chart: ${{ steps.publish-chart-step.outputs.publish }}
     steps:
@@ -125,6 +127,7 @@ jobs:
     needs: lint-chart
     name: Publish Chart
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     permissions:
       contents: write # for helm/chart-releaser-action to push chart release and create a release
     env:

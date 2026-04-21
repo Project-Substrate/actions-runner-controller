@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 # See https://developers.cloudflare.com/cloudflare-one/tutorials/many-cfd-one-tunnel/
 

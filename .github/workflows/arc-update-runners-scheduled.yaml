@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 # This workflows polls releases from actions/runner and in case of a new one it
 # updates files containing runner version and opens a pull request.
 name: Runner Updates Check (Scheduled Job)
@@ -16,6 +17,7 @@ jobs:
   # version and sets them as outputs.
   check_versions:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     env:
       GH_TOKEN: ${{ github.token }}
     outputs:
@@ -53,6 +55,7 @@ jobs:
   # it sets a PR name as output.
   check_pr:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     permissions:
       contents: read
     needs: check_versions
@@ -107,6 +110,7 @@ jobs:
   # the changes and opens a pull request as `github-actions` bot.
   update_version:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     needs:
       - check_versions
       - check_pr

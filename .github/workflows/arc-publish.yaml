@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Publish ARC Image
 
 # Revert to https://github.com/actions-runner-controller/releases#releases
@@ -33,6 +34,7 @@ jobs:
   release-controller:
     name: Release
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     # gha-runner-scale-set has its own release workflow.
     # We don't want to publish a new actions-runner-controller image
     # we release gha-runner-scale-set.

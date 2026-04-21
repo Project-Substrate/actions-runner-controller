@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 COMMIT=$(git rev-parse HEAD)
 TAG=$(git describe --exact-match --abbrev=0 --tags "${COMMIT}" 2> /dev/null || true)

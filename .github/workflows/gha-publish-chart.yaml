@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: (gha) Publish Helm Charts
 
 on:
@@ -43,6 +44,7 @@ jobs:
   build-push-image:
     name: Build and push controller image
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -117,6 +119,7 @@ jobs:
     needs: build-push-image
     name: Publish Helm chart for gha-runner-scale-set-controller
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -164,6 +167,7 @@ jobs:
     needs: build-push-image
     name: Publish Helm chart for gha-runner-scale-set
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -206,3 +210,30 @@ jobs:
           echo "- Ref: ${{ steps.resolve_parameters.outputs.resolvedRef }}" >> $GITHUB_STEP_SUMMARY
           echo "- Short SHA: ${{ steps.resolve_parameters.outputs.short_sha }}" >> $GITHUB_STEP_SUMMARY
           echo "- gha-runner-scale-set Chart version: ${{ env.GHA_RUNNER_SCALE_SET_CHART_VERSION_TAG }}" >> $GITHUB_STEP_SUMMARY
+
+  trivy-scan:
+    name: Trivy Vulnerability Scan
+    runs-on: magnon-enterprise-runners
+    needs: [build-push-image]
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8  # v0.24.0
+        with:
+          image-ref: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+          exit-code: '0'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: trivy-results.sarif

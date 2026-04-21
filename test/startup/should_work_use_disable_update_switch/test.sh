@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 # UNITTEST: should work disable update
 # Will simulate a scneario where disableupdate=true. expects:

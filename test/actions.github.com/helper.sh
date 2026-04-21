@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 

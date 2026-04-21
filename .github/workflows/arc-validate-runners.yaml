@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Validate ARC Runners
 
 on:
@@ -23,6 +24,7 @@ jobs:
   shellcheck:
     name: runner / shellcheck
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - name: "Run shellcheck"
@@ -31,6 +33,7 @@ jobs:
   test-runner-entrypoint:
     name: Test entrypoint
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6

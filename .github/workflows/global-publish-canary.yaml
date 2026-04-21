@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Publish Canary Images
 
 # Revert to https://github.com/actions-runner-controller/releases#releases
@@ -49,6 +50,7 @@ jobs:
   legacy-canary-build:
     name: Build and Publish Legacy Canary Image
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       TARGET_ORG: actions-runner-controller
@@ -88,6 +90,7 @@ jobs:
   canary-build:
     name: Build and Publish gha-runner-scale-set-controller Canary Image
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v6

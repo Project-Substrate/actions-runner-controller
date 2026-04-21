@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 # UNITTEST: should work as non ephemeral
 # Will simulate a scenario where ephemeral=false. expects:

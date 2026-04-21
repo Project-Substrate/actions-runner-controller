@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: First Interaction
 
 permissions:
@@ -12,9 +13,14 @@ on:
     branches: [master]
     types: [opened]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check_for_first_interaction:
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/first-interaction@v3

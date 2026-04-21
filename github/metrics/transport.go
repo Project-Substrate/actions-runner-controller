@@ -1,3 +1,5 @@
+// Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 // Package metrics provides monitoring of the GitHub related metrics.
 //
 // This depends on the metrics exporter of kubebuilder.

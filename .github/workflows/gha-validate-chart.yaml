@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: (gha) Validate Helm Charts
 
 on:
@@ -34,6 +35,7 @@ jobs:
   validate-chart:
     name: Lint Chart
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -109,6 +111,7 @@ jobs:
   test-chart:
     name: Test Chart
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6

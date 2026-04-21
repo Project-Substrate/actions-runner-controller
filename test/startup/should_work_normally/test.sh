@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 # UNITTEST: should work normally
 # Will simulate a normal execution scenario. expects:

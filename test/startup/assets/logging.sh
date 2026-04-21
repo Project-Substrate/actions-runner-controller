@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 export LIGHTGREEN='\e[0;32m'
 export LIGHTRED='\e[0;31m'

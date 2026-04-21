@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 source logger.sh
 
 RUNNER_ASSETS_DIR=${RUNNER_ASSETS_DIR:-/runnertmp}

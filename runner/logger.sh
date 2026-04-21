@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 # We are not using `set -Eeuo pipefail` here because this file is sourced by
 # other scripts that might not be ready for a strict Bash setup. The functions
 # in this file do not require it, because they are not handling signals, have

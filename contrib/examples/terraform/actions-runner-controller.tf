@@ -1,3 +1,5 @@
+// Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 ### Deploying with exposed github token
 
 resource "kubernetes_namespace" "arc" {

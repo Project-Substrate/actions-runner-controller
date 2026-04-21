@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 # Checks the chart versions against an input version. Fails on mismatch.
 #
 # Usage:

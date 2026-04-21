@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Run Stale Bot
 on:
   schedule:
@@ -10,6 +11,7 @@ jobs:
   stale:
     name: Run Stale
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 30
     permissions:
       issues: write         # for actions/stale to close stale issues
       pull-requests: write  # for actions/stale to close stale PRs

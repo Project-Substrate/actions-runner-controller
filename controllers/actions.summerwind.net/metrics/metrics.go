@@ -1,3 +1,5 @@
+// Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 // Package metrics provides the metrics of custom resources such as HRA.
 //
 // This depends on the metrics exporter of kubebuilder.

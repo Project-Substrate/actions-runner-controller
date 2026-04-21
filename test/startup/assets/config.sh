@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 export LIGHTGREEN='\e[0;32m'
 export LIGHTRED='\e[0;31m'
@@ -30,4 +31,3 @@ success "created a dummy config file"
 count=`cat counter 2>/dev/null|| echo "0"`
 count=$((count + 1))
 echo ${count} > counter
-

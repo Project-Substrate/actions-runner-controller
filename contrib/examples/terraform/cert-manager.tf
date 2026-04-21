@@ -1,3 +1,5 @@
+// Copyright (c) 2024-2026 Magnon Compute Corporation. All Rights Reserved.
+
 # cert-manager must be deployed or included via the deployment process
 
 resource "kubernetes_namespace" "cm" {

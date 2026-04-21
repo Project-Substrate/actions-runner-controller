@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 source logger.sh
 source graceful-stop.sh
 trap graceful_stop TERM

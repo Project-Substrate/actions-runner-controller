@@ -1,3 +1,4 @@
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 name: Release ARC Runner Images
 permissions:
   contents: read
@@ -29,6 +30,7 @@ jobs:
   build-runners:
     name: Trigger Build and Push of Runner Images
     runs-on: magnon-enterprise-runners
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6
       - name: Get runner version

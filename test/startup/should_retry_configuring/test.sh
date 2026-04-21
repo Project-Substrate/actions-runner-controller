@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) Magnon Compute Corporation. All rights reserved.
 
 # UNITTEST: retry config
 # Will simulate a configuration failure and expects:
