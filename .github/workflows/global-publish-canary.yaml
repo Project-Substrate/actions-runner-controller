@@ -4,6 +4,7 @@ name: Publish Canary Images
 # Revert to https://github.com/actions-runner-controller/releases#releases
 # for details on why we use this approach
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
