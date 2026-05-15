@@ -29,7 +29,7 @@ concurrency:
 jobs:
   build-runners:
     name: Trigger Build and Push of Runner Images
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6

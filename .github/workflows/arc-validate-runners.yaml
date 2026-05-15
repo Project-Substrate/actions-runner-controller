@@ -23,7 +23,7 @@ concurrency:
 jobs:
   shellcheck:
     name: runner / shellcheck
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
@@ -32,7 +32,7 @@ jobs:
 
   test-runner-entrypoint:
     name: Test entrypoint
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     steps:
       - name: Checkout
