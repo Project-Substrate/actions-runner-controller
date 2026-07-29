@@ -49,7 +49,7 @@ env:
 jobs:
   legacy-canary-build:
     name: Build and Publish Legacy Canary Image
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 60
     env:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -89,7 +89,7 @@ jobs:
 
   canary-build:
     name: Build and Publish gha-runner-scale-set-controller Canary Image
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 60
     steps:
       - name: Checkout
