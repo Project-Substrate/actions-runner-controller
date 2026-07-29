@@ -28,7 +28,7 @@ concurrency:
 
 jobs:
   default-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -51,7 +51,7 @@ jobs:
         shell: bash
 
   single-namespace-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -74,7 +74,7 @@ jobs:
         shell: bash
 
   dind-mode-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -97,7 +97,7 @@ jobs:
         shell: bash
 
   kubernetes-mode-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -120,7 +120,7 @@ jobs:
         shell: bash
 
   auth-proxy-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -143,7 +143,7 @@ jobs:
         shell: bash
 
   anonymous-proxy-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -166,7 +166,7 @@ jobs:
         shell: bash
 
   self-signed-ca-setup:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -189,7 +189,7 @@ jobs:
         shell: bash
 
   update-strategy-tests:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:
@@ -212,7 +212,7 @@ jobs:
         shell: bash
 
   init-with-min-runners:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 20
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.id == github.repository_id
     steps:

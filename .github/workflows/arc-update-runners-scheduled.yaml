@@ -16,7 +16,7 @@ jobs:
   # check_versions compares our current version and the latest available runner
   # version and sets them as outputs.
   check_versions:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     env:
       GH_TOKEN: ${{ github.token }}
@@ -54,7 +54,7 @@ jobs:
   # runner latest version != our current version. If no existing PR is found,
   # it sets a PR name as output.
   check_pr:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 15
     permissions:
       contents: read
@@ -109,7 +109,7 @@ jobs:
   # update_version updates runner version in the files listed below, commits
   # the changes and opens a pull request as `github-actions` bot.
   update_version:
-    runs-on: magnon-enterprise-runners
+    runs-on: magnon-enterprise-runners-substrate
     timeout-minutes: 30
     needs:
       - check_versions
